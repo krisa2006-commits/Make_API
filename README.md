@@ -23,6 +23,8 @@ Eventique Backend provides APIs to support the core functionalities of an event 
 - **Database Integration** – Store and manage application data using MongoDB and Mongoose.
 - **Error Handling** – Centralized error-handling middleware.
 
+---
+
 ## Tech Stack
 
 | Technology | Purpose |
@@ -38,6 +40,8 @@ Eventique Backend provides APIs to support the core functionalities of an event 
 | Multer | File Upload Handling |
 | CORS | Cross-Origin Resource Sharing |
 | dotenv | Environment Variables |
+
+---
 
 ## Project Structure
 
@@ -93,15 +97,23 @@ server/
 └── README.md
 ```
 
+---
+
 ## Installation & Setup
 
-### 1. Start the Development Server
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Start the Development Server
 
 ```bash
 npm run start
 ```
 
-The server will start at:
+The local server will start at:
 
 ```text
 http://localhost:5050
@@ -109,15 +121,53 @@ http://localhost:5050
 
 To verify that the API is running, open:
 
-```text
 http://localhost:5050/
-```
 
 Expected response:
 
 ```text
 Eventique API is running...
 ```
+
+---
+
+## Live API Deployment
+
+The Eventique Backend API is successfully deployed on **Render**.
+
+**Production Base URL:**
+
+https://eventique-backend-sikf.onrender.com
+
+**Local Development URL:**
+
+http://localhost:5050
+
+### Live API Health Check
+
+To verify that the deployed backend is running, visit:
+
+https://eventique-backend-sikf.onrender.com/
+
+Expected response:
+
+```text
+Eventique API is running...
+```
+
+### Live API Base Endpoints
+
+| Module | Live Endpoint |
+|---|---|
+| Authentication | `/api/auth` |
+| Events | `/api/events` |
+| Categories | `/api/categories` |
+| Bookings | `/api/bookings` |
+| Users | `/api/users` |
+
+**Hosting Platform:** Render
+
+**Repository:** https://github.com/krisa2006-commits/Make_API
 
 ---
 
@@ -142,20 +192,6 @@ The backend uses the following API route groups:
 | POST | `/api/events` | Create a new event |
 | PUT | `/api/events/:id` | Update an event |
 | DELETE | `/api/events/:id` | Delete an event |
-
-### Authentication
-
-Protected routes require a valid JWT access token.
-
-Add the following header to authenticated requests:
-
-```text
-Authorization: Bearer YOUR_JWT_TOKEN
-```
-
-Administrative event operations require an authorized Admin account.
-
----
 
 ## Image Upload
 
@@ -186,25 +222,25 @@ image
 
 ## Deployment
 
-The backend can be deployed using a Node.js hosting platform such as Render.
+The backend is deployed using **Render**.
 
-For deployment:
+Deployment configuration:
 
-1. Push the backend code to GitHub.
-2. Create a Web Service on Render.
-3. Configure the server root directory and build/start commands.
-4. Add all required environment variables in the hosting platform.
-5. Deploy the application.
-6. Test the live API endpoints.
+1. Backend source code is maintained on GitHub.
+2. GitHub repository is connected to Render.
+3. Node.js Web Service is configured on Render.
+4. Environment variables are configured securely.
+5. MongoDB Atlas is used as the cloud database.
+6. Cloudinary is used for cloud image storage.
 
 **Deployment Environment Variables:**
 
-- `PORT` (when required by the hosting platform)
 - `MONGO_URI`
 - `JWT_SECRET`
 - `CLOUDINARY_CLOUD_NAME`
 - `CLOUDINARY_API_KEY`
 - `CLOUDINARY_API_SECRET`
+- `PORT` (provided by the hosting platform when required)
 
 ---
 
@@ -215,13 +251,15 @@ For deployment:
 - JWT authentication protects private routes.
 - Role-based authorization restricts administrative operations.
 - Input validation helps prevent invalid request data.
+- Sensitive credentials are excluded from GitHub using `.gitignore`.
 
 ---
 
-# Project Explanation Video
+## Project Explanation Video
 
 **Explanation Video:**
-https://drive.google.com/file/d/1PgmCPu9-Vkv_H59H4JEZ8oq7NMUY1Gv1/view?usp=sharing
+
+[Watch Eventique Project Explanation](https://drive.google.com/file/d/1PgmCPu9-Vkv_H59H4JEZ8oq7NMUY1Gv1/view?usp=sharing)
 
 ---
 
